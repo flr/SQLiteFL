@@ -29,8 +29,8 @@ setMethod('dims', signature(obj='sqliteFLComp'),
 # show
 
 # iter  {{{
-setMethod("iter", signature(object="sqliteFLComp"),
-  function(object, iter=1, ...)
+setMethod("iter", signature(obj="sqliteFLComp"),
+  function(obj, iter=1, ...)
   {
     stop("TODO")
   }

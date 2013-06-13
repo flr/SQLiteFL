@@ -7,7 +7,7 @@
 \usepackage{fancyvrb} 
 
 \title{SQLiteFL internals}
-\author{Iago Mosqueira\\\smaller EC JRC, Ispra}
+\author{Iago Mosqueira\\ EC JRC, Ispra}
 \date{June 2011}
 
 % Sweave options
