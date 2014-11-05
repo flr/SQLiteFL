@@ -5,6 +5,7 @@ Date: 2009
 Author: Iago Mosqueira & Finlay Scott
 Description: SQLite for FLR
 Depends: methods, FLCore
+Suggests: xtable
 Conflicts: RSQLite
 Imports: FLCore
 Maintainer: Iago Mosqueira <iago.mosqueira@cefas.co.uk>

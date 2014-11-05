@@ -4,4 +4,8 @@
 
 - <http://web.utk.edu/~jplyon/sqlite/SQLite_optimization_FAQ.html#pragmas>
 
-<http://stackoverflow.com/questions/1711631/how-do-i-improve-insert-per-second-performance-of-sqlite?rq=1>
+- <http://stackoverflow.com/questions/1711631/how-do-i-improve-insert-per-second-performance-of-sqlite?rq=1>
+
+# Move to C++/RCpp
+
+- <https://srombauts.github.io/SQLiteCpp/>
