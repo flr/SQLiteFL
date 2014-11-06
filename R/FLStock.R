@@ -1,13 +1,8 @@
-# FLStock - «Short one line description»
+# FLStock - Accessors & methods for (sqlite)FLStock
 # SQLiteFL/R/FLStock.R
 
-# Copyright 2003-2009 FLR Team. Distributed under the GPL 2 or later
-# Maintainer: Iago Mosqueira, Cefas
-# $Id$
-
-# Reference:
-# Notes:
-
+# Copyright 2003-2014 FLR Team. Distributed under the GPL 2 or later
+# Maintainer: Iago Mosqueira, JRC G03
 
 # sql {{{
 setMethod('sql', signature(object='FLStock'),
@@ -525,26 +520,23 @@ setMethod('mat<-', signature(object='sqliteFLStock', value='FLQuant'),
 
 
 # METHODS
-
-# ssb {{{
+# ssb
 setMethod('ssb', signature(object='sqliteFLStock'),
-  function(object, ...)
-  {
-    if(units(harvest(object)) == 'f')
-	{
-		res <- colSums(stock.n(object) * exp(-harvest(object) * harvest.spwn(object) -
-      m(object) * m.spwn(object)) * stock.wt(object) * mat(object), na.rm=FALSE)
-		dim(res) <- c(1, dim(res))
-		dmns<-dimnames(stock(object))
-		dmns$iter<-dimnames(res)$iter
-		return(FLQuant(res, dimnames=dmns))
-	} else if(units(harvest(object)) == 'hr')
-  {
-		res <- colSums(object@stock.n * (1 - object@harvest * object@harvest.spwn) *
-      exp(-object@m * object@m.spwn) * object@harvest.spwn * object@mat * object@stock.wt)
-		dim(res) <- c(1, dim(res))
-		return(FLQuant(res, dimnames=dimnames(object@stock)))
-  } else
-		stop("Correct units (f or hr) not specified in the harvest slot")
-	}
-) # }}}
+	getMethod('ssb', c('FLStock')))
+
+# computeCatch
+setMethod('computeCatch', signature(object='sqliteFLStock'),
+	getMethod('computeCatch', c('FLS')))
+
+# computeLandings
+setMethod('computeLandings', signature(object='sqliteFLStock'),
+	getMethod('computeLandings', c('FLS')))# computeCatch
+
+# computeDiscards
+setMethod('computeDiscards', signature(object='sqliteFLStock'),
+	getMethod('computeDiscards', c('FLS')))
+
+# computeStock
+setMethod('computeStock', signature(object='sqliteFLStock'),
+	getMethod('computeStock', c('FLS')))
+

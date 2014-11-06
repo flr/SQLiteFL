@@ -105,7 +105,8 @@ selectFromFLComp <- function(object, slot, ...)
     quant  <- character(1)
     args <- list(...)
     if(length(args) == 0)
-      return(.Call('selectSlotFLComp', object@db, object@name, slot, PACKAGE='SQLiteFL'))
+      return(.Call('selectSlotFLComp', object@db, object@name,
+				slot, PACKAGE='SQLiteFL'))
     # Standard dimension names
     qnames <- c('quant', 'year', 'unit', 'season', 'area', 'iter')
     # Find names not in standard list, assume they refer to quant

@@ -30,7 +30,7 @@ catch.n(sql4, year=1998, age=2)
 
 # substitution
 catch(sql4, year=1957) <- 10
-catch(sql4, year=1957:1960) <- 10
+catch(sql4, year=1957:1960) <- 100
 catch(sql4, year=1957:1960) <- 1:4
 
 # How to get this to work?
